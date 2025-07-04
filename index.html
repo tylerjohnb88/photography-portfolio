@@ -9,7 +9,7 @@
   <meta name="description"
     content="Hello there, I'm Tyler Bartholomew – an intrepid explorer through the lens, on a relentless quest to capture the world's boundless wonders. Join me in unraveling the extraordinary through my lens as I embark on a visual journey like no other.">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="dist/assets/192.png" />
+  <link rel="icon" type="image/x-icon" href="dist/assets/favicons/192.png" />
   <link rel="stylesheet" href="dist/output.css" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Alpine.js -->
@@ -44,20 +44,20 @@
 </head>
 
 <body
-  class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
-  <!-- Navbar -->
-<!-- <header class="fixed w-full z-50 backdrop-blur-md bg-white/70 dark:bg-black/70 pt-8 pb-1 h-[6rem]"> -->
-<header class="fixed w-full z-50 backdrop-blur-md bg-gradient-to-t from-white/30 to-white/70 dark:from-black/30 dark:to-black/70 pt-8 pb-1 h-[6rem]">
-  <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap px- md:px-20">
-    <!-- Navbar -->
+  class="dark:bg-black bg-white h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500">
+<!-- Navbar -->
+<!-- <div id="header"></div> -->
+<!-- <header class="flex w-full overflow-hidden pt-10 pb-1"> -->
+<header class="flex w-full overflow-hidden z-50 backdrop-blur-md bg-gradient-to-t from-white/30 to-white/70 dark:from-black/30 dark:to-black/70 pt-8 pb-1" style="margin-left: 30px;">
+  <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap px- md:px-10">
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
       <div class="flex flex-wrap items-center md:flex-nowrap">
         <div class="mr-4 md:mr-2">
-          <a href="index.html" class="text-2xl font-signika font-bold">Tyler Bartholomew Photography</a>
+          <a href="index.html" class="text-2xl font-signika font-bold" style="margin-left: 20px;">Tyler Bartholomew Photography</a>
         </div>
         <div class="ml-auto md:hidden flex items-center justify-start">
           <button onclick="menuToggle()" @click="open = !open"
-            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none"
+            class="tap-highlight-transparent text-black dark:text-white w-5 h-5 relative focus:outline-none" style="margin-right: 40px;"
             @click="open = !open">
             <span class="sr-only">Open main menu</span>
             <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -73,10 +73,8 @@
             </div>
           </button>
         </div>
-        <div id="menu"
-          class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
-          <ul id="ulMenu"
-            class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
+        <div id="menu" class="w-full h-0 transition-all ease-out duration-500 md:transition-none md:w-auto md:flex-grow md:flex md:items-center">
+          <ul id="ulMenu" class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
             <li class="group transition duration-300">
               <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">Overview
                 <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
@@ -84,8 +82,7 @@
             </li>
             <li class="group transition duration-300">
               <a href="dist/about_me.html" class="font-signika text-2xl tap-highlight-transparent">Info
-                <span
-                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+                <span class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
               </a>
             </li>
           </ul>
@@ -94,7 +91,7 @@
     </nav>
     </div>
   </header>
-  <!-- Content -->
+<!-- Content -->
 <body>
  <main style="display: flex; flex-wrap: wrap; gap: 5rem; padding: 10rem 2rem;">
     
@@ -192,6 +189,7 @@
   </main> 
 </body>
   <!-- Footer -->
+   <!-- <div id="footer"></div> -->
   <footer>
     <div class="max-w-screen-xl py-16 mx-auto">
       <div class="grid grid-cols-1 gap-3 text-center mx-auto">
@@ -218,6 +216,16 @@
       </div>
     </div>
   </footer>
+  <!-- Script for the Header and Footer -->
+  <!-- <script>
+    fetch("src/partials/header.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("header").innerHTML = html);
+
+    fetch("src/partials/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html);
+  </script> -->
   <!-- Script for the LightBox -->
   <script>
     Fancybox.bind("[data-fancybox]", {});
@@ -225,5 +233,4 @@
   <script src="dist/fade_in.js"></script>
   <script src="dist/menu.js"></script>
 </body>
-
 </html>
