@@ -4,7 +4,7 @@
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full h-full">
       <div class="flex items-center relative w-full h-full">
         <!-- Logo for mobile, text for md and up only -->
-        <a href="Overview.html" class="flex items-center h-full">
+        <a href="index.html" class="flex items-center h-full">
           <!-- Logo for mobile only, dark mode: light logo -->
           <img src="../dist/assets/favicons/fav_light.svg" alt="Logo" class="h-12 md:hidden block dark:hidden" />
           <img src="../dist/assets/favicons/fav_dark.svg" alt="Logo" class="h-12 md:hidden hidden dark:block" />
@@ -35,7 +35,7 @@
             <ul id="ulMenu"
               class="flex flex-col duration-300 ease-out mt-2 space-y-2 px-4 py-2">
               <li class="group transition duration-300">
-                <a href="Overview.html" class="font-signika text-2xl tap-highlight-transparent">Overview</a>
+                <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">Overview</a>
               </li>
               <li class="group transition duration-300">
                 <a href="dist/Info.html" class="font-signika text-2xl tap-highlight-transparent">Info</a>
@@ -48,7 +48,7 @@
           <ul id="ulMenu-desktop"
             class="flex flex-row space-x-5 ml-auto items-center mt-0 pt-0 border-0">
             <li class="group transition duration-300">
-              <a href="Overview.html" class="font-signika text-2xl tap-highlight-transparent">Overview
+              <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">Overview
                 <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
               </a>
             </li>
@@ -81,7 +81,7 @@
         const hrefPage = href.substring(href.lastIndexOf('/') + 1);
         // If link matches current page, add underline
         if (
-          (page === '' || page === 'Overview.html') && (hrefPage === '' || hrefPage === 'Overview.html')
+          (page === '' || page === 'index.html') && (hrefPage === '' || hrefPage === 'index.html')
           || (page === 'Info.html') && (hrefPage === 'Info.html')
         ) {
           link.classList.add('border-b-2', 'border-black', 'dark:border-white');
