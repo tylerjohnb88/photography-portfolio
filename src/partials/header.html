@@ -6,8 +6,16 @@
         <!-- Logo for mobile, text for md and up only -->
         <a href="index.html" class="flex items-center h-full">
           <!-- Logo for mobile only, dark mode: light logo -->
-          <img src="../dist/assets/favicons/fav_light.svg" alt="Logo" class="h-12 md:hidden block dark:hidden" />
-          <img src="../dist/assets/favicons/fav_dark.svg" alt="Logo" class="h-12 md:hidden hidden dark:block" />
+           <!-- Light mode -->
+          <img src="../dist/assets/favicons/adaptive.svg" alt="Logo"
+              class="h-12 hidden md:hidden block dark:hidden" />
+
+          <!-- Dark mode -->
+          <img src="../dist/assets/favicons/adaptive.svg" alt="Logo"
+              class="h-12 hidden md:hidden dark:block" />
+
+          <!-- <img src="../dist/assets/favicons/fav_light.svg" alt="Logo" class="h-12 md:hidden block dark:hidden" />
+          <img src="../dist/assets/favicons/fav_dark.svg" alt="Logo" class="h-12 md:hidden hidden dark:block" /> -->
           <!-- Text for md and up only -->
           <span class="hidden md:inline text-2xl font-signika font-bold">Tyler Bartholomew Photography</span>
         </a>
