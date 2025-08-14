@@ -967,6 +967,10 @@ video {
   padding-top: 2.5rem;
 }
 
+.pt-safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
 .text-center {
   text-align: center;
 }
