@@ -1378,3 +1378,16 @@ video {
     max-width: 100% !important;
   }
 }
+
+header {
+  position: -webkit-sticky; /* Safari-specific sticky */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  backface-visibility: hidden; /* prevents repaint glitches */
+  transform: translateZ(0); /* creates new layer */
+}
+html, body {
+  height: 100%;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling */
+}
