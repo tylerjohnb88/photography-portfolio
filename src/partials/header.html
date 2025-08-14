@@ -1,5 +1,5 @@
 <!-- <header class="fixed w-full z-50 backdrop-blur-md bg-gradient-to-t from-white/30 to-white/70 dark:from-black/30 dark:to-black/70 h-[6rem]"> -->
-<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-gradient-to-t from-white/30 to-white/70 dark:from-black/30 dark:to-black/70 h-[6rem] pt-safe-top">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-black/70 backdrop-blur h-[6rem]" style="padding-top: env(safe-area-inset-top);">
   <div class="container mx-auto flex items-center h-full px-8 md:px-20">
     <!-- Navbar -->
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full h-full">
@@ -15,15 +15,13 @@
           <img src="../dist/assets/favicons/adaptive.svg" alt="Logo"
               class="h-12 hidden md:hidden dark:block" />
 
-          <!-- <img src="../dist/assets/favicons/fav_light.svg" alt="Logo" class="h-12 md:hidden block dark:hidden" />
-          <img src="../dist/assets/favicons/fav_dark.svg" alt="Logo" class="h-12 md:hidden hidden dark:block" /> -->
           <!-- Text for md and up only -->
           <span class="hidden md:inline text-2xl font-signika font-bold">Tyler Bartholomew Photography</span>
         </a>
         <!-- Hamburger button for mobile -->
         <div class="ml-auto md:hidden flex items-center h-full relative">
           <button @click="open = !open"
-            class="tap-highlight-transparent text-black dark:text-white w-14 h-full flex items-center justify-center focus:outline-none z-20 rounded-md">
+            class="tap-highlight-transparent text-black dark:text-white w-14 h-12 flex items-center justify-center focus:outline-none z-20 rounded-md">
             <span class="sr-only">Open main menu</span>
             <div class="w-5 h-5 flex items-center justify-center relative">
               <span aria-hidden="true"
@@ -40,7 +38,9 @@
           <!-- Mobile dropdown menu, absolutely positioned -->
           <div id="menu"
             :class="{'h-auto opacity-100 pointer-events-auto': open, 'h-0 opacity-0 pointer-events-none': !open }"
-            class="absolute right-0 top-full mt-2 w-40 bg-white dark:bg-black rounded shadow-lg transition-all ease-out duration-500 overflow-hidden z-10 md:hidden">
+            class="absolute right-0 top-full w-40 bg-white dark:bg-black rounded shadow-lg transition-all ease-out duration-500 overflow-hidden z-10 md:hidden"
+            style="margin-top: calc(1rem + env(safe-area-inset-top));"
+          >
             <ul id="ulMenu"
               class="flex flex-col duration-300 ease-out mt-2 space-y-2 px-4 py-2">
               <li class="group transition duration-300">
