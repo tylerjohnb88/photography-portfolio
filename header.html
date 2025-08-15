@@ -1,0 +1,102 @@
+<header class="fixed w-full z-50 backdrop-blur-md bg-gradient-to-t from-white/30 to-white/70 dark:from-black/30 dark:to-black/70 h-[6rem]">
+  <div class="container mx-auto flex items-center h-full px-8 md:px-20">
+    <!-- Navbar -->
+    <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full h-full">
+      <div class="flex items-center relative w-full h-full">
+        <!-- Logo for mobile, text for md and up only -->
+        <a href="index.html" class="flex items-center h-full">
+          <!-- Logo for mobile only, dark mode: light logo -->
+           <!-- Light mode -->
+          <img src="../dist/assets/favicons/adaptive.svg" alt="Logo"
+              class="h-12 hidden md:hidden block dark:hidden" />
+
+          <!-- Dark mode -->
+          <img src="../dist/assets/favicons/adaptive.svg" alt="Logo"
+              class="h-12 hidden md:hidden dark:block" />
+
+          <!-- <img src="../dist/assets/favicons/fav_light.svg" alt="Logo" class="h-12 md:hidden block dark:hidden" />
+          <img src="../dist/assets/favicons/fav_dark.svg" alt="Logo" class="h-12 md:hidden hidden dark:block" /> -->
+          <!-- Text for md and up only -->
+          <span class="hidden md:inline text-2xl font-signika font-bold">Tyler Bartholomew Photography</span>
+        </a>
+        <!-- Hamburger button for mobile -->
+        <div class="ml-auto md:hidden flex items-center h-full relative">
+          <button @click="open = !open"
+            class="tap-highlight-transparent text-black dark:text-white w-14 h-full flex items-center justify-center focus:outline-none z-20 rounded-md">
+            <span class="sr-only">Open main menu</span>
+            <div class="w-5 h-5 flex items-center justify-center relative">
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'rotate-45': open,' -translate-y-1.5': !open }"></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'opacity-0': open }"></span>
+              <span aria-hidden="true"
+                class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+                :class="{'-rotate-45': open, ' translate-y-1.5': !open}"></span>
+            </div>
+          </button>
+          <!-- Mobile dropdown menu, absolutely positioned -->
+          <div id="menu"
+            :class="{'h-auto opacity-100 pointer-events-auto': open, 'h-0 opacity-0 pointer-events-none': !open }"
+            class="absolute right-0 top-full mt-2 w-40 bg-white dark:bg-black rounded shadow-lg transition-all ease-out duration-500 overflow-hidden z-10 md:hidden">
+            <ul id="ulMenu"
+              class="flex flex-col duration-300 ease-out mt-2 space-y-2 px-4 py-2">
+              <li class="group transition duration-300">
+                <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">Overview</a>
+              </li>
+              <li class="group transition duration-300">
+                <a href="dist/Info.html" class="font-signika text-2xl tap-highlight-transparent">Info</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Desktop menu -->
+        <div class="hidden md:flex md:flex-grow md:items-center">
+          <ul id="ulMenu-desktop"
+            class="flex flex-row space-x-5 ml-auto items-center mt-0 pt-0 border-0">
+            <li class="group transition duration-300">
+              <a href="index.html" class="font-signika text-2xl tap-highlight-transparent">Overview
+                <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+            <li class="group transition duration-300">
+              <a href="dist/Info.html" class="font-signika text-2xl tap-highlight-transparent">Info
+                <span
+                  class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Get current page filename
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1);
+
+    // For both mobile and desktop menus
+    ['ulMenu', 'ulMenu-desktop'].forEach(function(menuId) {
+      const menu = document.getElementById(menuId);
+      if (!menu) return;
+      menu.querySelectorAll('a').forEach(function(link) {
+        // Get the last part of the href (filename)
+        const href = link.getAttribute('href');
+        const hrefPage = href.substring(href.lastIndexOf('/') + 1);
+        // If link matches current page, add underline
+        if (
+          (page === '' || page === 'index.html') && (hrefPage === '' || hrefPage === 'index.html')
+          || (page === 'Info.html') && (hrefPage === 'Info.html')
+        ) {
+          link.classList.add('border-b-2', 'border-black', 'dark:border-white');
+        } else {
+          link.classList.remove('border-b-2', 'border-black', 'dark:border-white');
+        }
+      });
+    });
+  });
+</script>
