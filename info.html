@@ -9,8 +9,9 @@
   <meta name="description"
     content="Hello there, I'm Tyler Bartholomew – a Seattle-based photographer.">
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../dist/assets/favicons/192.png" />
-  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/x-icon" href="./dist/assets/favicons/192.png" />
+  <!-- Use the same CSS bundle pathing as index -->
+  <link rel="stylesheet" href="dist/output.css" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -45,14 +46,14 @@
 </head>
 
 <body
-  class="dark:bg-black bg-white h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500">
+  class="dark:bg-black bg-white min-h-screen text-black dark:text-white opacity-0 animate-fade-in transition duration-500">
   <!-- Navbar -->
-   <!-- <div id="header"></div> -->
-  <header class="flex w-full overflow-hidden pt-10 pb-1">
+  <div id="header"></div>
+  <!-- <header class="flex w-full overflow-hidden pt-10 pb-1">
     <nav id="nav" x-data="{ open: false }" role="navigation" class="w-full">
       <div class="container mx-auto flex flex-wrap items-center md:flex-no-wrap">
         <div class="mr-4 md:mr-8">
-          <a href="../index.html" class="text-2xl font-signika font-bold">Tyler Bartholomew Photography</a>
+          <a href="index.html" class="text-2xl font-signika font-bold">Tyler Bartholomew Photography</a>
         </div>
         <div class="ml-auto md:hidden flex items-center justify-start">
           <button onclick="menuToggle()" @click="open = !open"
@@ -77,14 +78,14 @@
           <ul id="ulMenu"
             class="flex flex-col duration-300 ease-out md:space-x-5 sm:transition-none mt-5 md:flex-row md:items-center md:ml-auto md:mt-0 md:pt-0 md:border-0">
             <li class="group transition duration-300">
-              <a href="../index.html" class="font-signika text-2xl">Overview
+              <a href="index.html" class="font-signika text-2xl">Overview
                 <span
                   class="hidden md:block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black dark:bg-white">
                 </span>
               </a>
             </li>
             <li class="group transition duration-300">
-              <a href="Info.html" class="font-signika text-2xl">Info
+              <a href="info.html" class="font-signika text-2xl">Info
                 <span class="hidden md:block h-0.5 bg-black dark:bg-white"></span>
               </a>
             </li>
@@ -92,65 +93,72 @@
         </div>
       </div>
     </nav>
-  </header>
-</body>
-  <!-- Content -->
-<main  
-  <div class="container mx-auto">
-    <main style="display: flex; flex-wrap: wrap; gap: 5rem; padding: 4rem 2rem;">
-    <div class="grid grid-cols-2 gap-14 md:gap-20">
-      <div class="col-span-2 md:col-span-1 bg-white shadow-lg p-3 flex flex-col hover:rotate-0 transition duration-500 -rotate-6" style="aspect-ratio: 8/6";>
-        <div
-          class="aspect-square w-full overflow-hidden border border-gray-100">
-          <img src="./assets/profile.jpeg" alt="" class="h-full w-full object-cover" />
-          <!-- <div class="absolute bottom-0 left-0 right-0 text-center">
-            <p class="text-gray-800 dark:text-slate-200 pb-7 h-full text-6xl font-nothingyoucoulddo">me</p>
-          </div> -->
+  </header> -->
+
+  <!-- Content (wrapped with top padding to clear fixed header) -->
+  <div class="pt-24 px-8">
+    <main class="container mx-auto" style="display: flex; flex-wrap: wrap; gap: 5rem;">
+        <div class="grid grid-cols-2 gap-14 md:gap-20">
+          <div class="col-span-2 md:col-span-1 bg-white shadow-lg p-3 flex flex-col hover:rotate-0 transition duration-500 -rotate-6" style="aspect-ratio: 8/6";>
+            <div
+              class="aspect-square w-full overflow-hidden border border-gray-100">
+              <img src="dist/assets/profile.jpeg" alt="Profile photo" class="h-full w-full object-cover" />
+              <!-- <div class="absolute bottom-0 left-0 right-0 text-center">
+                <p class="text-gray-800 dark:text-slate-200 pb-7 h-full text-6xl font-nothingyoucoulddo">me</p>
+              </div> -->
+            </div>
+          </div>
+          <section class="font-normal text-center text-base md:text-start mx-3 col-span-2 md:col-span-1 my-auto">
+            <!-- <div class="block md:hidden">
+              <p class="text-3xl font-serif font-bold mb-1">Hello there,</p>
+              <p class="text-3xl font-serif font-bold mb-6">I'm Tyler <span class="animate-wave">👋</span></p>
+            </div>
+            <p class="hidden md:block text-3xl font-serif font-bold mb-6">Hello there, I'm Tyler
+              <span class="animate-wave">👋</span> -->
+            </p>
+            <p class="mb-4">
+              I'm a Seattle-based photographer struggling to find a reason to 
+              specialize—I find too many subjects worth photographing.
+            </p>
+            <p class="mb-4">
+              I’m drawn to photography for the intensely human moments and the 
+              ability to share those moments with others.
+            </p>
+            <p class="mt-4">
+              Telling people's stories is something I care deeply about. 
+              Whether I’m shooting for a brand or recording someone's special day, I’m 
+              drawn to the formation of stories when people feel seen and 
+              comfortable.
+            </p>
+            <p class="mt-4">
+              My collaborative approach to projects creates room for fun, genuine 
+              moments as they unfold. It keeps shoots spontaneous, light, and 
+              full of energy, giving a natural and emotive final image.
+            </p>
+          </section>
         </div>
-      </div>
-      <section class="font-normal text-center text-base md:text-start mx-3 col-span-2 md:col-span-1 my-auto">
-        <!-- <div class="block md:hidden">
-          <p class="text-3xl font-serif font-bold mb-1">Hello there,</p>
-          <p class="text-3xl font-serif font-bold mb-6">I'm Tyler <span class="animate-wave">👋</span></p>
-        </div>
-        <p class="hidden md:block text-3xl font-serif font-bold mb-6">Hello there, I'm Tyler
-          <span class="animate-wave">👋</span> -->
-        </p>
-        <p class="mb-4">
-          I'm a Seattle-based photographer struggling to find a reason to 
-          specialize—I find too many subjects worth photographing.
-        </p>
-        <p class="mb-4">
-          I’m drawn to photography for the intensely human moments and the 
-          ability to share those moments with others.
-        </p>
-        <p class="mt-4">
-          Telling people's stories is something I care deeply about. 
-          Whether I’m shooting for a brand or recording someone's special day, I’m 
-          drawn to the formation of stories when people feel seen and 
-          comfortable.
-        </p>
-        <p class="mt-4">
-          My collaborative approach to projects creates room for fun, genuine 
-          moments as they unfold. It keeps shoots spontaneous, light, and 
-          full of energy, giving a natural and emotive final image.
-        </p>
-      </section>
-    </div>
+    </main>
   </div>
-</main>
-<!-- Footer -->
+
+  <!-- Footer -->
   <div id="footer"></div>
-   <!-- Script for the Header and Footer -->
+
+  <!-- Script for the Header and Footer -->
   <script>
-    fetch("../src/partials/header.html")
+    fetch("src/partials/header.html")
       .then(res => res.text())
       .then(html => document.getElementById("header").innerHTML = html);
 
-    fetch("../src/partials/footer.html")
+    fetch("src/partials/footer.html")
       .then(res => res.text())
       .then(html => document.getElementById("footer").innerHTML = html);
   </script>
-  <script src="fade_in.js"></script>
-  <script src="menu.js"></script>
+  <!-- Script for the LightBox (matches index pattern) -->
+  <script>
+    if (window.Fancybox) { Fancybox.bind("[data-fancybox]", {}); }
+  </script>
+  <!-- Scripts -->
+  <script src="dist/fade_in.js"></script>
+  <script src="dist/menu.js"></script>
+</body>
 </html>
